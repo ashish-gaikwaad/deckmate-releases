@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] — 2026-07-09
+
+### Added
+- Persistent system command strip at the bottom of every screen: lock 🔒, sleep 😴, screenshot 📸, media controls ⏮️⏯️⏭️, mute 🔇, volume 🔊, brightness ☀️ — always accessible without switching trays
+- Volume and brightness each open a level sheet with a relative slider and ±1/±5 step buttons instead of separate up/down buttons
+- Settings gear icon added to the main header next to the connection indicator
+
+### Changed
+- Bottom navigation bar and landscape navigation rail removed; the app now shows a single full-screen button grid
+- Landscape orientation enters full-screen immersive mode (system bars hidden)
+- Default "System" tray removed; all system commands now live in the persistent bottom strip
+
+### Fixed
+- macOS: App now appears in the Dock and Cmd+Tab app switcher
+- macOS: Clicking the menu bar icon reliably opens the window (was silently ignored due to a timing issue)
+- Android/iOS: QR scanner camera now starts reliably; error state shows a permission message or retry button instead of a blank screen
+
 ## [1.0.1] — 2026-07-09
 
 ### Added
