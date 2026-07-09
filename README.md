@@ -6,6 +6,8 @@ DeckMate is a free alternative to a physical Stream Deck. Install the app on you
 
 > No cloud. No accounts. Everything stays on your local network.
 
+**GitHub:** [ashish-gaikwaad/deckmate-releases](https://github.com/ashish-gaikwaad/deckmate-releases) · [Releases](https://github.com/ashish-gaikwaad/deckmate-releases/releases) · [Changelog](./CHANGELOG.md)
+
 ---
 
 ## What you can do
@@ -42,14 +44,12 @@ DeckMate is a free alternative to a physical Stream Deck. Install the app on you
 
 ## Download
 
-Go to the [**Releases**](../../releases) page and grab the build for your platform:
+Go to the [**Releases**](https://github.com/ashish-gaikwaad/deckmate-releases/releases) page and grab the build for your platform:
 
 | Platform | File |
 |----------|------|
-| Android | `deckmate-android.apk` |
-| macOS | `DeckMate-macos.dmg` |
-| Windows | `DeckMate-windows-setup.exe` |
-| Linux | `DeckMate-linux.AppImage` |
+| Android | `DeckMate-x.x.x-android.apk` |
+| macOS | `DeckMate-x.x.x-macos.dmg` |
 
 > **iOS:** Sideload via AltStore, or install via TestFlight if you have an invite link.
 
@@ -63,7 +63,7 @@ Go to the [**Releases**](../../releases) page and grab the build for your platfo
 1. Open `DeckMate-macos.dmg`
 2. Drag **DeckMate** to your Applications folder
 3. Launch it — a small icon appears in the **menu bar** (top-right of your screen)
-4. Click the icon → you'll see your local IP address and a QR code
+4. Click the icon → the status window opens showing your local IP address and a QR code
 
 **Windows**
 1. Run `DeckMate-windows-setup.exe` and follow the installer
@@ -81,7 +81,7 @@ Go to the [**Releases**](../../releases) page and grab the build for your platfo
 ### Step 2 — Install on your phone
 
 **Android**
-1. Transfer `deckmate-android.apk` to your phone (download directly or via cable)
+1. Transfer `DeckMate-android.apk` to your phone (download directly or via cable)
 2. Tap the file to install — if prompted, allow installation from unknown sources
 3. Open **DeckMate**
 
@@ -94,8 +94,8 @@ Go to the [**Releases**](../../releases) page and grab the build for your platfo
 
 1. Open DeckMate on your **phone**
 2. Tap the **Settings** tab (bottom-right)
-3. Enter the **IP address** shown in the computer's tray icon popup
-   — or tap **Scan QR** to scan the QR code from the computer screen
+3. Tap **Scan QR Code from Mac** and point your camera at the QR code on your computer screen
+   — or enter the IP address manually
 4. Tap **Save & Reconnect**
 5. The status indicator turns **green** — you're connected
 
@@ -111,37 +111,18 @@ Tap any button on the grid — the action fires on your computer instantly.
 
 ### Adding a button
 
-Tap the **＋** tile at the end of the grid, then choose an action type:
-
-| Type | What it does | Example |
-|------|-------------|---------|
-| **App** | Opens an application | `/Applications/Slack.app` · `C:\Program Files\...` |
-| **URL** | Opens a link in the browser | `https://github.com` |
-| **⚙️ System** | Triggers a built-in system action | Pick from the list below |
-
-Give the button a label and an emoji icon, then tap **Add Button**.
-
----
-
-### Editing or deleting a button
-
-**Long-press** any button → tap **Edit**. Change the label, emoji, or action. Tap the 🗑️ icon to delete it.
+On your **computer**, open the DeckMate status window and switch to the **Trays** tab. Add buttons there — they sync to your phone automatically.
 
 ---
 
 ### Trays (button pages)
 
-The row of chips at the top is your **Tray bar** — each tray is an independent page of buttons.
+The row of chips at the top of the mobile grid is your **Tray bar** — each tray is an independent page of buttons.
 
 | Action | How |
 |--------|-----|
 | Switch tray | Tap a tray chip |
-| Rename or delete tray | Long-press a tray chip |
-| Add a new tray | Tap **＋** in the tray bar |
-
-The app ships with two trays:
-- **Main 🏠** — six app shortcuts (Chrome, Slack, Spotify, Finder, Terminal, GitHub)
-- **System ⚙️** — all 11 system commands, ready to use
+| Add a new tray | Use the Trays tab on your computer |
 
 ---
 
@@ -152,8 +133,8 @@ The app ships with two trays:
 | 🔒 Lock Screen | Locks the screen immediately |
 | 😴 Sleep | Puts the computer to sleep |
 | 📸 Screenshot | Takes a screenshot |
-| 🔊 Volume Up | Increases volume by 10% |
-| 🔉 Volume Down | Decreases volume by 10% |
+| 🔊 Volume Up | Increases volume |
+| 🔉 Volume Down | Decreases volume |
 | 🔇 Mute / Unmute | Toggles mute |
 | ⏯️ Play / Pause | Plays or pauses the current media |
 | ⏭️ Next Track | Skips to the next track |
@@ -161,58 +142,28 @@ The app ships with two trays:
 | ☀️ Brightness Up | Increases screen brightness |
 | 🌑 Brightness Down | Decreases screen brightness |
 
-> Brightness control works on MacBooks and most laptops. Desktop monitors may not respond depending on driver support.
-
----
-
-## Settings reference
-
-| Setting | Description |
-|---------|-------------|
-| **Host IP Address** | Your computer's local network IP (shown in the tray icon popup) |
-| **Port** | Default is `4321`. Change only if you have a port conflict |
-| **Keep Screen Awake** | Prevents your phone screen from dimming while DeckMate is open |
-
 ---
 
 ## Troubleshooting
 
 **Phone shows "Not connected"**
-- Confirm both devices are on the same Wi-Fi network (not one on Wi-Fi and one on Ethernet with isolation)
+- Confirm both devices are on the same Wi-Fi network
 - Double-check the IP address matches what the tray icon shows
-- Check that port `4321` is not blocked by a firewall — temporarily disable it to test, then add an allow rule
-- **macOS:** go to System Settings → Privacy & Security → Local Network and allow DeckMate
+- Check that port `4321` is not blocked by a firewall
 
-**Button tap does nothing / system actions don't work**
+**Button tap does nothing**
 - Check the status is green in the Settings tab
-- **macOS:** go to System Settings → Privacy & Security → Accessibility and allow DeckMate (required for media keys, lock screen, and screenshot shortcuts)
+- **macOS:** System Settings → Privacy & Security → Accessibility → allow DeckMate
 
 **DeckMate doesn't appear in the macOS Dock**
-- This is intentional — DeckMate is a menu bar app. Find it by the small icon in the top-right menu bar.
-
-**Buttons disappeared after reinstalling**
-- Button layouts are stored on your **phone**. Reinstalling the phone app resets them to defaults. Reinstalling the computer app has no effect on your buttons.
-
-**Android can't connect from an emulator**
-- Use `10.0.2.2` as the host IP instead of your machine's local IP.
+- This is intentional — DeckMate is a menu bar app. Find it by the small icon in the top-right menu bar. It also appears in Cmd+Tab.
 
 **macOS says the app is from an unidentified developer**
 - Right-click (or Control-click) the app → Open → Open anyway. You only need to do this once.
 
----
-
-## Default buttons
-
-| | Label | Action |
-|-|-------|--------|
-| 🌐 | Chrome | Opens Google Chrome |
-| 💬 | Slack | Opens Slack |
-| 🎵 | Spotify | Opens Spotify |
-| 📁 | Finder | Opens Finder |
-| 🖥️ | Terminal | Opens Terminal |
-| 🐙 | GitHub | Opens github.com |
-
-All default buttons can be edited or deleted freely.
+**Android camera doesn't open for QR scan**
+- Go to Settings → tap **Scan QR Code from Mac** → grant Camera permission when prompted
+- If previously denied: Settings → Apps → DeckMate → Permissions → Camera → Allow
 
 ---
 
@@ -224,4 +175,4 @@ See [CHANGELOG.md](./CHANGELOG.md) for the full version history.
 
 ## Feedback & bug reports
 
-Open an issue on this repository — feature requests and bug reports are both welcome.
+Open an issue on [this repository](https://github.com/ashish-gaikwaad/deckmate-releases/issues) — feature requests and bug reports are both welcome.
